@@ -15,8 +15,8 @@ RUN python3 -m pip install --upgrade pip setuptools && \
 # User-settable versions:
 # This Dockerfile should support gcc-[7, 8, 9, 10] and clang-[10, 11]
 # Earlier versions of clang will require significant modifications to the IWYU section
-ARG GCC_VER="10"
-ARG LLVM_VER="11"
+ARG GCC_VER="11"
+ARG LLVM_VER="12"
 
 # Add gcc-${GCC_VER}
 RUN add-apt-repository -y ppa:ubuntu-toolchain-r/test && \
@@ -94,7 +94,7 @@ ENV CONAN_SYSREQUIRES_SUDO 0
 ENV CONAN_SYSREQUIRES_MODE enabled
 
 # Include project
-ADD . /starter_project
-WORKDIR /starter_project
+ADD . /test_conan_cpp_project
+WORKDIR /test_conan_cpp_project
 
 CMD ["/bin/bash"]
