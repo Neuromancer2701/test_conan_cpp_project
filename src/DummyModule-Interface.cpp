@@ -1,24 +1,30 @@
 
-
 module;
+
+#include <spdlog/spdlog.h>
 
 export module DummyModule;
 
-export namespace dummynamespace {
-class DummyModule
-{
-  /**
-   * @brief Default Constructor.
-   */
-  explicit DummyModule();
+export
+namespace dummyNamespace {
 
-  virtual ~DummyModule() noexcept;
+    class DummyModule {
+    public:
+        /**
+         * @brief Default Constructor.
+         */
+        explicit DummyModule()
+                : dummy(2701) {}
 
-  void foo();
-};
+        virtual ~DummyModule() noexcept = default;
+
+        void foo() {
+            fmt::print("Hello, from {} with {}\n", "foo", dummy);
+        }
+
+    private:
+        int dummy;
+    };
 
 
-}// namespace dummynamespace
-
-
-#endif// MYPROJECT_DUMMYMODULE_H
+}// namespace dummyNamespace

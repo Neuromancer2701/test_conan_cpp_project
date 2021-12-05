@@ -4,18 +4,16 @@ module;
 
 module DummyModule;
 
-namespace dummynamespace {
+namespace dummyNamespace {
 
-DummyModule::DummyModule()
-{
-  /* Empty */
-}
+    DummyModule::DummyModule(){
 
-DummyModule::~DummyModule() noexcept = default;
+    }
 
-DummyModule::foo()
-{
-  fmt::print("Hello, from {}\n", "foo");
-}
+    DummyModule::~DummyModule() noexcept = default;
 
-}// namespace dummynamespace
+    void DummyModule::foo() {
+        fmt::print("Hello, from {}\n", "foo");
+    }
+
+}// namespace dummyNamespace
